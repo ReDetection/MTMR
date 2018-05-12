@@ -15,11 +15,11 @@ class MusicBarItem: CustomButtonTouchBarItem {
     private var timer: Timer?
     let buttonSize = NSSize(width: 21, height: 21)
     
-    let playerBundleIdentifiers = [
-        "com.apple.iTunes",
-        "com.spotify.client",
-        "com.coppertino.Vox",
-        "com.google.Chrome",
+    var playerBundleIdentifiers = [
+//        "com.apple.iTunes",
+//        "com.spotify.client",
+//        "com.coppertino.Vox",
+//        "com.google.Chrome",
         "com.apple.Safari"
     ]
     
@@ -51,6 +51,19 @@ class MusicBarItem: CustomButtonTouchBarItem {
     }
     
     @objc func playPause() {
+        for playerIdentifier in self.playerBundleIdentifiers {
+            guard let application = SBApplication(bundleIdentifier: playerIdentifier),
+            application.isRunning,
+            let player = application as? PlayerApplication else {
+                continue
+            }
+            guard let playpause = player.playpause else {
+                continue
+            }
+            playpause()
+            break
+        }
+        return
         for ident in playerBundleIdentifiers {
             if let musicPlayer = SBApplication(bundleIdentifier: ident) {
                 if (musicPlayer.isRunning) {
@@ -150,6 +163,20 @@ class MusicBarItem: CustomButtonTouchBarItem {
     func updatePlayer() {
         var iconUpdated = false
         var titleUpdated = false
+        
+        for playerIdentifier in self.playerBundleIdentifiers {
+            guard let application = SBApplication(bundleIdentifier: playerIdentifier),
+                application.isRunning,
+                let player = application as? PlayerApplication else {
+                    continue
+            }
+            guard let trackTitle = player.trackTitle else {
+                continue
+            }
+            self.title = trackTitle
+            return
+        }
+        return
         
         for var ident in playerBundleIdentifiers {
             if let musicPlayer = SBApplication(bundleIdentifier: ident) {
@@ -251,6 +278,67 @@ class MusicBarItem: CustomButtonTouchBarItem {
         }
     }
 }
+
+@objc protocol PlayerApplication {
+    @objc optional func playpause()
+    var trackTitle: String? { get }
+}
+extension SpotifyApplication where Self: PlayerApplication {}
+extension iTunesApplication where Self: PlayerApplication {}
+extension VoxApplication where Self: PlayerApplication {}
+
+@objc protocol BrowserApplication {
+    @objc optional func windows() -> SBElementArray
+}
+@objc protocol BrowserWindow {
+    @objc optional func tabs() -> SBElementArray
+    @objc optional func doJavaScript(_ x: String!, in in_: Any!) -> Any
+}
+extension SafariApplication where Self: BrowserApplication {}
+
+@objc protocol BrowserTab {
+    @objc optional var URL: String { get }
+    @objc optional var title: String { get }
+}
+extension SafariTab where Self: BrowserTab {
+    var title: String {
+        return self.name ?? ""
+    }
+}
+
+
+extension BrowserApplication where Self: PlayerApplication {
+    func playpause() {
+        
+    }
+    
+    var trackTitle: String? {
+        for windowObj in self.windows?() ?? [] {
+            guard let window = windowObj as? BrowserWindow else {
+                continue
+            }
+            for tabObj in window.tabs?() ?? [] {
+                guard let tab = tabObj as? BrowserTab else {
+                    continue
+                }
+                if (tab.URL?.starts(with: "https://music.yandex.ru"))! {
+                    //                                    if (!(tab.name?.hasSuffix("на Яндекс.Музыке"))!) {
+                    return tab.title
+                    //                                    }
+                } else if ((tab.URL?.starts(with: "https://vk.com/audios"))! || (tab.URL?.starts(with: "https://vk.com/music"))!) {
+                    return tab.title
+                } else if (tab.URL?.starts(with: "https://www.youtube.com/watch"))! {
+                    return tab.title
+                }
+                
+            }
+        }
+        return nil
+    }
+    
+}
+
+
 
 @objc protocol SpotifyApplication {
     @objc optional var currentTrack: SpotifyTrack {get}
