@@ -9,6 +9,7 @@
 #import "TouchBarPrivateApi.h"
 #import "TouchBarSupport.h"
 #import "DeprecatedCarbonAPI.h"
+#import "XPC_AppleScriptProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

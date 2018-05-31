@@ -12,6 +12,9 @@
 		36300E9120A2D2B200B31C71 /* BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36300E9020A2D2B200B31C71 /* BackgroundColorTests.swift */; };
 		368EDDE720812A1D00E10953 /* ScrollViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EDDE620812A1D00E10953 /* ScrollViewItem.swift */; };
 		36A778BE20A6C27100B38714 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A778BD20A6C27100B38714 /* GeneralExtensions.swift */; };
+		36BA253E20B933CD000E1C5A /* XPC_AppleScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA253D20B933CD000E1C5A /* XPC_AppleScript.m */; };
+		36BA254020B933CD000E1C5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA253F20B933CD000E1C5A /* main.m */; };
+		36BA254420B933CD000E1C5A /* XPC AppleScript.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 36BA253920B933CD000E1C5A /* XPC AppleScript.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		36C2ECD7207B6DAE003CDA33 /* TimeTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2ECD6207B6DAE003CDA33 /* TimeTouchBarItem.swift */; };
 		36C2ECD9207B74B4003CDA33 /* AppleScriptTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2ECD8207B74B4003CDA33 /* AppleScriptTouchBarItem.swift */; };
 		36C2ECDB207C3FE7003CDA33 /* ItemsParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2ECDA207C3FE7003CDA33 /* ItemsParsing.swift */; };
@@ -52,12 +55,42 @@
 		B0F8771A207AC1EA00D6E430 /* TouchBarSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F87719207AC1EA00D6E430 /* TouchBarSupport.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		36BA254220B933CD000E1C5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B082B247205C7D8000BC04DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36BA253820B933CD000E1C5A;
+			remoteInfo = "XPC AppleScript";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36BA254820B933CD000E1C5A /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				36BA254420B933CD000E1C5A /* XPC AppleScript.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		36300E85209FD16700B31C71 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		36300E8E20A2CF3400B31C71 /* AppleScriptDefinitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptDefinitionTests.swift; sourceTree = "<group>"; };
 		36300E9020A2D2B200B31C71 /* BackgroundColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorTests.swift; sourceTree = "<group>"; };
 		368EDDE620812A1D00E10953 /* ScrollViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewItem.swift; sourceTree = "<group>"; };
 		36A778BD20A6C27100B38714 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
+		36BA253920B933CD000E1C5A /* XPC AppleScript.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = "XPC AppleScript.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BA253B20B933CD000E1C5A /* XPC_AppleScriptProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPC_AppleScriptProtocol.h; sourceTree = "<group>"; };
+		36BA253C20B933CD000E1C5A /* XPC_AppleScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPC_AppleScript.h; sourceTree = "<group>"; };
+		36BA253D20B933CD000E1C5A /* XPC_AppleScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPC_AppleScript.m; sourceTree = "<group>"; };
+		36BA253F20B933CD000E1C5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36BA254120B933CD000E1C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BDC22F207CDA8600FCFEBE /* TECHNICAL_DEBT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TECHNICAL_DEBT.md; sourceTree = "<group>"; };
 		36C2ECD2207B3B1D003CDA33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		36C2ECD6207B6DAE003CDA33 /* TimeTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTouchBarItem.swift; sourceTree = "<group>"; };
@@ -109,6 +142,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		36BA253620B933CD000E1C5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B082B24C205C7D8000BC04DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +168,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36BA253A20B933CD000E1C5A /* XPC AppleScript */ = {
+			isa = PBXGroup;
+			children = (
+				36BA253B20B933CD000E1C5A /* XPC_AppleScriptProtocol.h */,
+				36BA253C20B933CD000E1C5A /* XPC_AppleScript.h */,
+				36BA253D20B933CD000E1C5A /* XPC_AppleScript.m */,
+				36BA253F20B933CD000E1C5A /* main.m */,
+				36BA254120B933CD000E1C5A /* Info.plist */,
+			);
+			path = "XPC AppleScript";
+			sourceTree = "<group>";
+		};
 		B059D62B205F11E8006E6B86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +196,7 @@
 				36BDC22F207CDA8600FCFEBE /* TECHNICAL_DEBT.md */,
 				B082B251205C7D8000BC04DC /* MTMR */,
 				B082B264205C7D8000BC04DC /* MTMRTests */,
+				36BA253A20B933CD000E1C5A /* XPC AppleScript */,
 				B082B250205C7D8000BC04DC /* Products */,
 				B059D62B205F11E8006E6B86 /* Frameworks */,
 			);
@@ -154,6 +207,7 @@
 			children = (
 				B082B24F205C7D8000BC04DC /* MTMR.app */,
 				B082B261205C7D8000BC04DC /* MTMRTests.xctest */,
+				36BA253920B933CD000E1C5A /* XPC AppleScript.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,6 +300,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		36BA253820B933CD000E1C5A /* XPC AppleScript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36BA254720B933CD000E1C5A /* Build configuration list for PBXNativeTarget "XPC AppleScript" */;
+			buildPhases = (
+				36BA253520B933CD000E1C5A /* Sources */,
+				36BA253620B933CD000E1C5A /* Frameworks */,
+				36BA253720B933CD000E1C5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XPC AppleScript";
+			productName = "XPC AppleScript";
+			productReference = 36BA253920B933CD000E1C5A /* XPC AppleScript.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 		B082B24E205C7D8000BC04DC /* MTMR */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B082B275205C7D8000BC04DC /* Build configuration list for PBXNativeTarget "MTMR" */;
@@ -253,10 +324,12 @@
 				B082B24B205C7D8000BC04DC /* Sources */,
 				B082B24C205C7D8000BC04DC /* Frameworks */,
 				B082B24D205C7D8000BC04DC /* Resources */,
+				36BA254820B933CD000E1C5A /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				36BA254320B933CD000E1C5A /* PBXTargetDependency */,
 			);
 			name = MTMR;
 			productName = MTMR;
@@ -290,6 +363,10 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Anton Palgunov";
 				TargetAttributes = {
+					36BA253820B933CD000E1C5A = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+					};
 					B082B24E205C7D8000BC04DC = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
@@ -319,11 +396,19 @@
 			targets = (
 				B082B24E205C7D8000BC04DC /* MTMR */,
 				B082B260205C7D8000BC04DC /* MTMRTests */,
+				36BA253820B933CD000E1C5A /* XPC AppleScript */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		36BA253720B933CD000E1C5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B082B24D205C7D8000BC04DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +439,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		36BA253520B933CD000E1C5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BA254020B933CD000E1C5A /* main.m in Sources */,
+				36BA253E20B933CD000E1C5A /* XPC_AppleScript.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B082B24B205C7D8000BC04DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +492,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		36BA254320B933CD000E1C5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36BA253820B933CD000E1C5A /* XPC AppleScript */;
+			targetProxy = 36BA254220B933CD000E1C5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B082B258205C7D8000BC04DC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -410,6 +512,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		36BA254520B933CD000E1C5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "XPC AppleScript/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toxblh.MTMR.XPC-AppleScript";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		36BA254620B933CD000E1C5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D6D8BR2QNB;
+				INFOPLIST_FILE = "XPC AppleScript/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toxblh.MTMR.XPC-AppleScript";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B082B273205C7D8000BC04DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -591,6 +725,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		36BA254720B933CD000E1C5A /* Build configuration list for PBXNativeTarget "XPC AppleScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BA254520B933CD000E1C5A /* Debug */,
+				36BA254620B933CD000E1C5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B082B24A205C7D8000BC04DC /* Build configuration list for PBXProject "MTMR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
